@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+</head>
+<style>
+    .container{
+        width: 300px;
+        border: 2px solid #216759;
+        border-radius: 10px;
+        display: block;
+        margin: 3opx auto;
+        background-color: #64f5e4;
+        margin-left: 390px;
+        margin-top: 70px;
+    }
+    .img-dice{
+        width: 200px;
+        display: block;
+        margin: 20px auto;
+    }
+    .btn-roll{
+        display: block;
+        margin: 20px auto;
+        background-color: #308767;
+        color: #f0e6ff;
+        font-size: 20px;
+        padding: 10px 40px;
+        border-radius:10px;
+        border: none;
+        cursor:pointer;
+        margin-top: 30px;
+    }
+    .heading{
+        text-align: center;
+        color: #0a4e3c;
+    }
+    .container:hover{
+        box-shadow: 1px 2px 9px 0px;
+    }
+    .btn-roll:hover{
+         background-color: #0a4e3c;
+    }
+</style>
+<body>
+    <div class="container">
+    <h1 class="heading">Dice Roller</h1>
+    <img src="dice.png" alt="" class="img-dice" id="img-dice"/>
+    <button type="button" class="btn-roll" onclick="rollDice()">
+        Roll Dice</button>
+</div>
+    <script>
+        function resetDice(){
+            const diceImg = document.getElementById('img-dice');
+            diceImg.src = 'dice.png';
+        }
+        function rollDice(){
+        const min = 1
+        const max = 6
+        const randomNum = Math.round(Math.random() * (max-min)) + min;
+        const diceImg =document.getElementById('img-dice');
+        if(randomNum==1){
+            diceImg.src = 'one.png';
+        }
+        else if(randomNum==2){
+            diceImg.src = 'two.png';
+        }
+        else if(randomNum==3){
+            diceImg.src = 'three.png';
+        }
+        else if(randomNum==4){
+            diceImg.src = 'four.png';
+        }
+        else if(randomNum==5){
+            diceImg.src = 'five.png';
+        }
+        else if(randomNum==6){
+            diceImg.src = 'six.png';
+        }
+        setTimeout(resetDice,3000);
+     }
+       
+    </script>
+    
+</body>
+</html>
